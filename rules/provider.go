@@ -5,6 +5,7 @@ import (
 	"log"
 
 	"github.com/terraform-linters/tflint/rules/awsrules"
+	"github.com/terraform-linters/tflint/rules/gcprules"
 	"github.com/terraform-linters/tflint/rules/terraformrules"
 	"github.com/terraform-linters/tflint/tflint"
 )
@@ -51,6 +52,8 @@ var manualDefaultRules = []Rule{
 	terraformrules.NewTerraformWorkspaceRemoteRule(),
 	terraformrules.NewTerraformUnusedDeclarationsRule(),
 	terraformrules.NewTerraformCommentSyntaxRule(),
+	// gcp rules added
+	gcprules.NewGkeHardenWorkloadIdentityRule(),
 }
 
 var manualDeepCheckRules = []Rule{
